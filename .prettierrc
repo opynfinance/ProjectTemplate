@@ -2,14 +2,16 @@
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "printWidth": 120,
-  "singleQuote": false,
+  "singleQuote": true,
   "tabWidth": 2,
+  "semi": false,
   "trailingComma": "all",
   "overrides": [
     {
-      "files": "*.sol",
+      "files": "contracts/**/*.sol",
       "options": {
-        "tabWidth": 4
+        "tabWidth": 4,
+        singleQuote: false
       }
     }
   ]
