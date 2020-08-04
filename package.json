@@ -10,6 +10,7 @@
     "url": "https://github.com/paulrberg/solidity-template/issues"
   },
   "devDependencies": {
+    "@codechecks/client": "^0.1.10",
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@ethersproject/abstract-signer": "^5.0.1",
