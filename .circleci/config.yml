@@ -5,7 +5,7 @@ orbs:
 workflows:
   env-vars:
     jobs:
-      - build:
+      - build
 
 jobs:
   build:
