@@ -25,7 +25,7 @@ jobs:
       - run:
           name: Lint Contracts
           command: npm run lint:sol
-    - run:
+      - run:
           name: Build Contracts and types
           command: npm run build
       - run:
