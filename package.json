@@ -1,13 +1,13 @@
 {
-  "name": "@paulrberg/solidity-template",
+  "name": "opynswap",
   "description": "To be used when building a new solidity project from scratch",
   "version": "1.0.0",
   "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://paulrberg.com"
+    "name": "Opyn",
+    "url": "https://github.com/opynfinance/TradingVenue"
   },
   "bugs": {
-    "url": "https://github.com/paulrberg/solidity-template/issues"
+    "url": "https://github.com/opynfinance/TradingVenue/issues"
   },
   "devDependencies": {
     "@codechecks/client": "^0.1.10",
