@@ -1,7 +1,7 @@
 /**
  * SPDX-License-Identifier: UNLICENSED
  */
-pragma solidity 0.6.10;
+pragma solidity =0.6.10;
 import "eip1167-spawner/contracts/Spawner.sol";
 
 /**
@@ -11,7 +11,7 @@ import "eip1167-spawner/contracts/Spawner.sol";
  */
  
 /// @notice mapping of oToken address => OpynSwap address
-mapping (address => address) public exchange;
+mapping(address => address) public exchange;
 
 /// @notice OpynSwap template address used for creation of new OpynSwap contracts
 address public opynSwap
