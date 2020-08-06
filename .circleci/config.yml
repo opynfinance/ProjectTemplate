@@ -31,6 +31,10 @@ jobs:
       - run:
           name: Build Contracts and types
           command: npm run build
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
   
   lint:
     docker:
@@ -38,6 +42,8 @@ jobs:
     working_directory: ~/tradingvenue
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Lint Contracts
           command: npm run lint:sol
@@ -54,6 +60,8 @@ jobs:
     
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Test Contracts
           command: npm run test
@@ -64,13 +72,11 @@ jobs:
     working_directory: ~/tradingvenue
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run: 
           name: Gas Reporter
           command: npx codechecks
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
       - run:
           name: Produce Coverage Report
           command: npm run coverage
