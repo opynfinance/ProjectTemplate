@@ -35,6 +35,8 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
+            - build
+            - typechain
   
   lint:
     docker:
