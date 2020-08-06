@@ -63,6 +63,9 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
+          name: Build Contracts and types
+          command: npm run build
+      - run:
           name: Test Contracts
           command: npm run test
   
