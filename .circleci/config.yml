@@ -6,9 +6,15 @@ workflows:
   build-test-report:
     jobs:
       - build
-      - lint
-      - test
-      - report
+      - lint:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
+      - report:
+          requires:
+            - test
 
 jobs:
   build:
