@@ -2,7 +2,7 @@ import { config as dotenvConfig } from "dotenv";
 import { resolve } from "path";
 dotenvConfig({ path: resolve(__dirname, "./.env") });
 
-import { BuidlerConfig, usePlugin } from "@nomiclabs/buidler/config";
+import { usePlugin } from "@nomiclabs/buidler/config";
 import { HDAccountsConfig } from "@nomiclabs/buidler/types";
 import "./tasks/accounts";
 import "./tasks/clean";
@@ -10,6 +10,7 @@ import "./tasks/typechain";
 
 usePlugin("@nomiclabs/buidler-waffle");
 usePlugin("solidity-coverage");
+usePlugin('buidler-gas-reporter');
 
 interface HDAccountsConfigExtended extends HDAccountsConfig {
   url: string;
@@ -38,7 +39,7 @@ function createHDAccountConfig(network: string): HDAccountsConfigExtended {
   };
 }
 
-const config: BuidlerConfig = {
+const config = {
   defaultNetwork: "buidlerevm",
   mocha: {
     delay: true,
@@ -75,6 +76,11 @@ const config: BuidlerConfig = {
     root: "./",
     sources: "./contracts",
     tests: "./test",
+  },
+  gasReport: {
+    currency: 'USD',
+    coinmarketcap: process.env.COINMARKETCAP_API,
+    showTimeSpent: true,
   },
   solc: {
     /* https://buidler.dev/buidler-evm/#solidity-optimizer-support */
